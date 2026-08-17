@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Kindio</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            /* overflow-x: hidden; */
+        }
+        .top-bar-section{
+            background-color: #f8f3e7;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            /* width: 100%;
+            max-width: 100%; */
+        }
+        .top-bar-wrapper{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+.top-bar{
+    display: flex;
+    gap: 20px;
+}
+.top-bar h3{
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 5px;
+            font-family: "DM Serif Text", serif;
+}
+.top-bar h4{
+    font-size: 16px;
+               font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        color: #667471;
+}
+        header{
+            background-color: #FFC107;
+            padding: 0;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        nav ul{
+            display: flex;
+            gap: 50px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+             font-family: "Nunito", sans-serif;
+             color: #0b4e3d;
+            
+        }
+        nav li{
+            list-style-type: none;
+        }
+        .nav-btn{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-btn .donate{
+            background-color: #0b4e3d;
+            border-radius: 50px;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 400;
+             font-family: "Nunito", sans-serif;
+    cursor: pointer;
+
+        }
+        
+        .nav-btn svg{
+            border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            padding: 8px;
+        }
+        .about-wrapper{
+            display: flex;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 50px;
+            /* justify-content: space-between; */
+            padding-top: 100px;
+        }
+        .about h4{
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            text-transform: uppercase;
+            color: #0b4e3d;
+        }
+        .about h1{
+            font-size: 55px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            width: 590px;
+            padding-top: 20px;
+            line-height: 60px;
+        }
+        .about p{
+            width: 600px;
+            font-size: 16px;
+            font-weight: 400;
+             font-family: "Nunito", sans-serif;
+             padding-top: 20px;
+             line-height: 24px;
+             color: #667471;
+             text-transform: capitalize;
+
+        }
+        .about-images img{
+            border-radius: 20px;
+        }
+
+        .about-one-image{
+            position: absolute;
+            z-index: 10;
+            top: 30%;
+            left: 55%;
+        }
+        .about-three-image{
+            position: relative;
+            left: 40%;
+        }
+        .about-two-image{
+            position: relative;
+            left: 10%;
+            top: -20%;
+        }
+        .about-icon-box h3{
+            font-size: 24px;
+            font-weight: 400;
+            font-family: "DM Serif Text", serif;
+        }
+        .about-icon-box p{
+            font-size: 16px;
+            font-weight: 400;
+             font-family: "Nunito", sans-serif;
+             color: #667471;
+             
+
+        }
+        .about-box{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 40px;
+        }
+        .icon-box{
+            display: flex;
+            gap: 30px;
+        }
+        .icon-box h3{
+            font-size: 28px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            margin: 0;
+            color: #0b4e3d;
+            padding-bottom: 5px;
+        }
+        .icon-box p{
+            margin: 0;
+            padding: 0;
+            width: 500px;
+            font-size: 17px;
+            font-weight: 400;
+            font-family: "Nunito", sans-serif;
+             color: #667471;
+             text-transform: capitalize;
+
+        }
+        .icon-box img{
+            width: 60px;
+            height: 60px;
+            transition: 1s ease;
+        }
+        .icon-box img:hover{
+            transform: rotateY(190deg);
+        }
+        .about-btn button{
+            border: none;
+            border-radius: 50px;
+            background-color: #0b4e3d;
+            color: white;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-family: "Nunito", sans-serif;
+            font-weight: 400;
+    cursor: pointer;
+
+        }
+        /* .about-btn-img{
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        } */
+
+        .service-section{
+            background-image: url('https://kindi-react.vercel.app/img/home-1/service/bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            max-width: 97%;
+            border-radius: 20px;
+            height: auto;
+            margin: 0 auto;
+            padding: 120px 0px;
+        }
+        .service-wrapper{
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            
+            
+        }
+        .service{
+            justify-content: center;
+            /* display: flex; */
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .service h4{
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "DM Serif Text", serif;
+            border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+
+        }
+        .service h1{
+            font-size: 52px;
+            width: 800px;
+            margin: 0 auto;
+            padding-top: 20px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+        }
+        .slider-section{
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+        .slider{
+    width: 370px;
+    margin-top: 70px !important;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.slider img{
+    width: 90px;
+    height: 90px;
+    border: 5px solid white;
+    border-radius: 100px;
+    margin: 0 auto;
+    background-color: #f8f3e7;
+    padding: 20px;
+    position: relative;
+    top: -15px;
+}
+.slider h1{
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+}
+.slider p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    width: 320px;
+    padding-top: 20px;
+    line-height: 24px;
+             color: #667471;
+
+    /* padding-bottom: 20px; */
+}
+.slider button{
+    border: none;
+    background-color: #0b4e3d;
+    border-radius: 100px;
+    color: white;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.service-image{
+    position: absolute;
+    left: 0;
+}
+.donating-section{
+    padding-top: 100px;
+}
+.donating-wrapper{
+    width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+}
+.donating h4{
+    border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+
+.donating h1{
+    font-size: 52px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            width: 800px;
+            padding-top: 20px;
+            padding-bottom: 50px;
+}
+.donating-content{
+    display: flex;
+    justify-content: space-between;
+}
+ .donating-btn{
+     background-color: #0b4e3d;
+    color: white;
+    border: none;
+    border-radius: 50px; /* 100px ki jagah */
+     /* padding: 10px 20px; */
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    
+}
+.images-wrapper{
+    width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+    flex-wrap: wrap;
+}
+.images-box{
+    border: 2px solid rgb(235, 235, 235);
+    padding: 30px;
+    width: 44.3%;
+    border-radius: 20px;
+}
+.images-box img{
+    border-radius: 20px;
+}
+.images-content-box{
+    display: flex;
+}
+.images-content{
+    padding-left: 30px;
+}
+.images-wrapper{
+    display: flex;
+    gap: 20px;
+}
+.images-content h3{
+    font-size: 24px;
+    width: 250px;
+    text-transform: capitalize;
+            font-family: "DM Serif Text", serif;
+            line-height: 32px;
+
+}
+.images-content p{
+    font-size: 18px;
+    font-weight: 400;
+               font-family: "Nunito", sans-serif;
+            width: 300px;
+            padding-top: 10px;
+            line-height: 28px;
+             color: #667471;
+
+}
+.progress-bar-container{
+    width: 100%;
+    height: 10px;
+    background-color: gray;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+}
+.progress-bar{
+    width: 78%;
+    height: 15px;
+    background-color: #0b4e3d;
+    position: absolute;
+}
+.progress-bar-yellow{
+    width: 78%;
+    height: 15px;
+    background-color: #FFC107;
+    position: absolute;
+}
+.progress-bar-orange{
+    width: 78%;
+    height: 15px;
+    background-color: #FF5528;
+    position: absolute;
+}
+.progress-bar-purple{
+    width: 78%;
+    height: 15px;
+    background-color: #8139E7;
+    position: absolute;
+}
+/* .progress-box {
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #0b3c2d;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1;
+} */
+.goal-text{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+span{
+    color: #667471;
+}
+.images-btn {
+    background-color: #0b4e3d;
+    color: white;
+    border: none;
+    border-radius: 50px; /* 100px ki jagah */
+     padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 16px;
+    /* width: 150px;
+    height: 50px; */
+
+}
+
+.images-btn-yellow {
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    border-radius: 50px; /* 100px ki jagah */
+     padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 16px;
+    /* width: 150px;
+    height: 50px; */
+
+}
+.images-btn-orange {
+    background-color: #FF5528;
+    color: white;
+    border: none;
+    border-radius: 50px; /* 100px ki jagah */
+     padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 16px;
+    /* width: 150px;
+    height: 50px; */
+
+}
+.images-btn-purple {
+    background-color: #8139E7;
+    color: white;
+    border: none;
+    border-radius: 50px; /* 100px ki jagah */
+     padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 16px;
+    /* width: 150px;
+    height: 50px; */
+
+}
+/* .image-content-box-bg-img{
+    background-image: url('https://kindi-react.vercel.app/img/home-1/donation/shape.png');
+    position: absolute;
+    top: 0;
+    background-color: red;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+ .images-slider-section{
+    margin-top: 100px;
+    width: 100%;
+    
+ }
+.images-slider-wrapper{
+    display: flex;
+    overflow-x: hidden;
+}
+.images-slider{
+     display: flex;
+    gap: 30px;
+    width: 100%;
+    animation: infiniteScroll 10s linear infinite;
+}
+
+.images-slider img{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.slider-content{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.slider-content h4{
+    border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+.slider-content h1{
+    font-size: 52px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            width: 800px;
+            padding-top: 20px;
+            padding-bottom: 50px;
+}
+
+.team-section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+.team-wrapper{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.team{
+    text-align: center;
+}
+.team h4{
+    border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+.team h1{
+     font-size: 52px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            /* width: 800px; */
+            padding-top: 20px;
+            padding-bottom: 50px;
+}
+.teams-images-section{
+    margin-top: 120px;
+}
+.team-images-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.team-images{
+    background-color: #f7f7f7;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0px 25px 25px;
+    height: 350px;
+    /* position: relative; */
+}
+.team-images img {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    top: -100px;
+    left: 0px;
+    transform: scale(1.02);
+        transition: all 1.5s ease-out;
+        vertical-align: middle;
+}
+.teams-images-content{
+   background-color: white;
+   border-radius: 20px;
+   padding: 30px 0px;
+   text-align: center;
+   position: relative;
+   top: -60px;
+}
+.teams-images-content h4{
+    font-size: 22px;
+    font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            padding-bottom: 10px;
+}
+.teams-images-content p{
+    font-size: 18px;
+    font-weight: 400;
+               font-family: "Nunito", sans-serif;
+               color: #667471;
+}
+.teams-svgs{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: center;
+    padding-top: 15px;
+}
+.teams-svgs svg{
+    cursor: pointer;
+
+}
+.testimonials-section{
+    margin-top: 100px;
+}
+.testimonials-wrapper{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    
+}
+.testimonials h4{
+   border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            display: inline-block;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+.testimonials h1{
+    font-size: 52px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+    /* width: 800px; */
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.tesimonials-image{
+    display: flex;
+    position: relative;
+} 
+.tesimonials-image img{
+   border-radius: 0 0 266.5px 266.5px;
+   z-index: 5;
+}
+/* .tesimonials-content{
+    background-color: #F8F3E7;
+    width: 84%;
+    left: 18%;
+    height: 400px;
+    border-radius: 0px 20px 20px 0px;
+    position: absolute;
+    z-index: 10;
+    padding-left: 50px;
+    top: 25px;
+    right: 0;
+} */
+
+.tesimonials-content{
+     padding-left: 70px;
+     width: 100%;
+     height: 500px;
+     background-color: #f8f3e7;
+     position: relative;
+     padding-top: 50px;
+     left: 0;
+    border-radius: 0px 20px 20px 0px;
+    z-index: 3;
+    margin-left: -75px;
+    padding-left: 120px;
+
+}
+.tesimonials-content p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 650px;
+    color: #667471;
+    line-height: 30px;
+}
+
+.tesimonials-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "DM Serif Text", serif;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+.tesimonials-content h5{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    color: #667471;
+}
+.number-section{
+    margin-top: 100px;
+    background-color: #f8f3e7;
+}
+.number-wrapper{
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    
+}
+
+.number img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-left: -120px;
+    overflow: hidden;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.number-content{
+    background-color: #f8f3e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+}
+.divider{
+    border: 1px solid #d6d6d6;
+    margin-top: 40px;
+    width: 90%;
+}
+.tesimonials-content p{
+    color: #667471;
+    padding-top: 30px;
+}
+.tesimonials-content span{
+    color: black;
+}
+.logos-slider{
+    /* position: relative; */
+    animation: infiniteScroll 10s linear infinite;
+    display: flex;
+    gap: 30px;
+
+}
+.number-content h4{
+     border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            width: fit-content;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+.number-content h1{
+    font-size: 48px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+    width: 500px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.logos-slider img{
+    width: 120px;
+    height: 40px;
+}
+
+.number-content p{
+     font-size: 18px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 600px;
+    color: #667471;
+    line-height: 30px;
+}
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* .testimonials-left-image{
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+} */
+
+.number-counter{
+    display: grid;
+   grid-template-columns: repeat(2 , 1fr);
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+    padding-top: 50px;
+}
+/* .counter-head{
+    width: 35%;
+} */
+
+.counter-head h2{
+    font-size: 64px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+}
+.counter-head h3{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+
+}
+.head-yellow{
+    color: #FFC107;
+}
+.faq-section{
+    padding: 100px 0;
+}
+.faq-wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.faq{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.faq-head{
+    color: #0b4e3d;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "DM Serif Text", serif;
+    background-color: #F8F3E7;
+    padding: 30px 30px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faq-head::after{
+    content: url('/svgviewer-output\ \(1\).svg');
+}
+.our-faq-content{
+    width: 100%;
+}
+.our-faq-content h4{
+     border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            width: fit-content;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+
+.our-faq-content h1{
+     font-size: 48px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+    width: 650px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.our-faq-content p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    width: 600px;
+    color: #667471;
+    line-height: 30px;
+}
+.our-faq-content iframe{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.blog-head h4{
+     border-radius: 50px;
+     border: 1px solid #0b4e3d;
+            border-radius: 50px;
+            width: fit-content;
+             padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "DM Serif Text", serif;
+            text-transform: uppercase;
+            color: #0b4e3d;
+}
+.blog-head h1{
+      font-size: 48px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+    width: 650px;
+    text-transform: capitalize;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.blog-head{
+    display: flex;
+    flex-direction: column;
+     
+}
+.blog-head{
+    /* display: flex; */
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.blog-wrapper{
+ /* display: flex; */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.blogs{
+    margin-top: 40px;
+}
+.blogs img{
+    border-radius: 20px 20px 0px 0px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    gap: 10px;
+}
+.icon{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.icons h5{
+    color: #667471;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "DM Serif Text", serif;
+}
+    </style>
+</head>
+<body>
+
+    <section>
+    <div class="top-bar-section">
+        <div class="top-bar-wrapper">
+            <div class="top-bar">
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- License: PD. Made by mono-company: https://github.com/mono-company/mono-icons -->
+<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
+                <div class="top-bar-content">
+                    <h4>Our Address</h4>
+                <h3>California City, USA</h3>
+                </div>
+            </div>
+
+             <div class="top-bar">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
+                <div class="top-bar-content">
+                <h4>Our Address</h4>
+                <h3>California City, USA</h3>
+                </div>
+            </div>
+
+            <div class="top-bar">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
+                <div class="top-bar-content">
+                <h4>Our Address</h4>
+                <h3>California City, USA</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    <header>
+        <nav>
+            <div class="nav-img">
+                <img src="/black-logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Pages</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-btn">
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
+<svg fill="#000000" width="22px" height="22px" viewBox="-2.5 -2.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-search"><path d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z'/></svg>
+                <button class="donate">Donate Now</button>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="about-section">
+            <div class="about-wrapper">
+                <div class="about">
+                    <h4>About Us</h4>
+                    <h1>Our goal is to save more lives with your help.</h1>
+                    <p>“Overall, I cannot recommend The Gourmet Bistro highly enough. If you're looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further. I will definitely be returning .</p>
+                   <div class="about-box">
+                    <div class="icon-box">
+                    <img src="/01.svg" alt="">
+                    <div class="icon-box-content">
+                        <h3>Fundraising</h3>
+                        <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                    <img src="/02.svg" alt="">
+                    <div class="icon-box-content">
+                        <h3>Donation Marketing</h3>
+                        <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further.</p>
+                        </div>
+                    </div>
+                    <div class="about-btn-img">
+                    <div class="about-btn">
+                        <button>More About Us</button>
+                    </div>
+                     <!-- <div class="about-image-box">
+                        <img src="/client.png" alt="">
+                        <h3>James Anderson</h3>
+                        <p>Software Engineer</p>
+                    </div> -->
+                    </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <!-- <img class="about-one-image" src="/about-1.jpg" alt=""> -->
+                    <img class="about-three-image" src="/about-3.jpg" alt="">
+                    <img class="about-two-image" src="/about-2.png" alt="">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div class="section">
+        <div class="service-section">
+            <div class="service-wrapper">
+                <img src="https://kindi-react.vercel.app/img/home-1/service/shape.png" alt="" class="service-image">
+                <div class="service">
+                    <h4>Charity Services</h4>
+                    <h1>Providing Humanitarian services to all people is What we do.</h1>
+                </div>
+               <div class="slider-section">
+
+    <div class="slider">
+        <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
+        <h1>Medical Help</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button>Learn More</button>
+    </div>
+
+    <div class="slider">
+        <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
+        <h1>Food Support</h1>
+               <p>Lorem ipsum dolor s it amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button>Learn More</button>
+    </div>
+
+    <div class="slider">
+        <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
+        <h1>Education</h1>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button>Learn More</button>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section>
+        <div class="donating-section">
+            <div class="donating-wrapper">
+                <div class="donating">
+                    <h4>Lets Start Donating</h4>
+                    <div class="donating-content">
+                    <h1>See Your Impact Transparent Donation Causes</h1>
+                    <button class="donating-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="images-wrapper">
+                <div class="images-box">
+                    <div class="images-content-box">
+                    <img src="https://kindi-react.vercel.app/img/home-1/donation/01.jpg" alt="">
+                    <!-- <div class="image-content-box-bg-img"></div> -->
+                    <div class="images-content">
+                    <h3>Give African Children a Good Education</h3>
+                    <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                        <div class="progress-box" style="left: 78%;">78%</div>
+                    </div>
+                    <div class="goal-text">
+                        <h4>Goal: <span>$250,000</span></h4>
+                        <h4>Raised: <span>$500,000</span></h4>
+                    </div>
+                    <button class="images-btn">Donte Now</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="images-box">
+                    <div class="images-content-box">
+                    <img src="https://kindi-react.vercel.app/img/home-1/donation/02.jpg" alt="">
+                    <div class="images-content">
+                    <h3>Give African Children a Good Education</h3>
+                    <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-yellow"></div>
+                        <div class="progress-box" style="left: 78%;">78%</div>
+                    </div>
+                    <div class="goal-text">
+                        <h4>Goal: <span>$250,000</span></h4>
+                        <h4>Raised: <span>$500,000</span></h4>
+                    </div>
+                    <button class="images-btn-yellow">Donte Now</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="images-box">
+                    <div class="images-content-box">
+                    <img src="https://kindi-react.vercel.app/img/home-1/donation/03.jpg" alt="">
+                    <div class="images-content">
+                    <h3>Give African Children a Good Education</h3>
+                    <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-orange"></div>
+                        <div class="progress-box" style="left: 78%;">78%</div>
+                    </div>
+                    <div class="goal-text">
+                        <h4>Goal: <span>$250,000</span></h4>
+                        <h4>Raised: <span>$500,000</span></h4>
+                    </div>
+                    <button class="images-btn-orange">Donte Now</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="images-box">
+                    <div class="images-content-box">
+                    <img src="https://kindi-react.vercel.app/img/home-1/donation/04.jpg" alt="">
+                    <div class="images-content">
+                    <h3>Give African Children a Good Education</h3>
+                    <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-purple"></div>
+                        <div class="progress-box" style="left: 78%;">78%</div>
+                    </div>
+                    <div class="goal-text">
+                        <h4>Goal: <span>$250,000</span></h4>
+                        <h4>Raised: <span>$500,000</span></h4>
+                    </div>
+                    <button class="images-btn-purple">Donte Now</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section>
+        <div class="images-slider-section">
+            <div class="slider-content">
+                    <h4>Complete Project</h4>
+                    <h1>Our Recent completed Project img</h1>
+                </div>
+            <div class="images-slider-wrapper">
+                <div class="images-slider">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/03.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/01.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/02.jpg" alt="">
+
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/03.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/01.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/02.jpg" alt="">
+
+
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/03.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/01.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/02.jpg" alt="">
+
+
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/03.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/01.jpg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/project/02.jpg" alt="">
+
+                </div>
+            </div>
+
+            
+        </div>
+        
+    </section>
+
+    <section>
+        <div class="team-section">
+            <div class="team-wrapper">
+                <div class="team">
+                    <h4>Team Members</h4>
+                    <h1>Meet The Optimistic volunteers</h1>
+                </div>
+
+                <div class="teams-images-section">
+                    <div class="team-images-wrapper">
+                        <div class="team-images">
+                            <img src="https://kindi-react.vercel.app/img/home-1/team/01.jpg" alt="">
+
+                            <div class="teams-images-content">
+                                <h4>Darrell Steward</h4>
+                                <p>Software Developer</p>
+                                <div class="teams-svgs">
+                                    <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Microsoft: https://github.com/microsoft/vscode-codicons -->
+<svg width="23px" height="23px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#0b4e3d"><path d="M15 3.784a5.63 5.63 0 0 1-.65.803 6.058 6.058 0 0 1-.786.68 5.442 5.442 0 0 1 .014.377c0 .574-.061 1.141-.184 1.702a8.467 8.467 0 0 1-.534 1.627 8.444 8.444 0 0 1-1.264 2.04 7.768 7.768 0 0 1-1.72 1.521 7.835 7.835 0 0 1-2.095.95 8.524 8.524 0 0 1-2.379.329 8.178 8.178 0 0 1-2.293-.325A7.921 7.921 0 0 1 1 12.52a5.762 5.762 0 0 0 4.252-1.19 2.842 2.842 0 0 1-2.273-1.19 2.878 2.878 0 0 1-.407-.8c.091.014.181.026.27.035a2.797 2.797 0 0 0 1.022-.089 2.808 2.808 0 0 1-.926-.362 2.942 2.942 0 0 1-.728-.633 2.839 2.839 0 0 1-.65-1.822v-.033c.402.227.837.348 1.306.362a2.943 2.943 0 0 1-.936-1.04 2.955 2.955 0 0 1-.253-.649 2.945 2.945 0 0 1 .007-1.453c.063-.243.161-.474.294-.693.364.451.77.856 1.216 1.213a8.215 8.215 0 0 0 3.008 1.525 7.965 7.965 0 0 0 1.695.263 2.15 2.15 0 0 1-.058-.325 3.265 3.265 0 0 1-.017-.331c0-.397.075-.77.226-1.118a2.892 2.892 0 0 1 1.528-1.528 2.79 2.79 0 0 1 1.117-.225 2.846 2.846 0 0 1 2.099.909 5.7 5.7 0 0 0 1.818-.698 2.815 2.815 0 0 1-1.258 1.586A5.704 5.704 0 0 0 15 3.785z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" version="1.1" id="svg8" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" sodipodi:docname="1881161.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve"><path id="path4" inkscape:connector-curvature="0" d="M16.6,14c-0.2-0.1-1.5-0.7-1.7-0.8c-0.2-0.1-0.4-0.1-0.6,0.1c-0.2,0.2-0.6,0.8-0.8,1c-0.1,0.2-0.3,0.2-0.5,0.1c-0.7-0.3-1.4-0.7-2-1.2c-0.5-0.5-1-1.1-1.4-1.7c-0.1-0.2,0-0.4,0.1-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.6-1.3-0.8-1.8C9.4,7.3,9.2,7.3,9,7.3c-0.1,0-0.3,0-0.5,0C8.3,7.3,8,7.5,7.9,7.6C7.3,8.2,7,8.9,7,9.7c0.1,0.9,0.4,1.8,1,2.6c1.1,1.6,2.5,2.9,4.2,3.7c0.5,0.2,0.9,0.4,1.4,0.5c0.5,0.2,1,0.2,1.6,0.1c0.7-0.1,1.3-0.6,1.7-1.2c0.2-0.4,0.2-0.8,0.1-1.2C17,14.2,16.8,14.1,16.6,14 M19.1,4.9C15.2,1,8.9,1,5,4.9c-3.2,3.2-3.8,8.1-1.6,12L2,22l5.3-1.4c1.5,0.8,3.1,1.2,4.7,1.2h0c5.5,0,9.9-4.4,9.9-9.9C22,9.3,20.9,6.8,19.1,4.9 M16.4,18.9c-1.3,0.8-2.8,1.3-4.4,1.3h0c-1.5,0-2.9-0.4-4.2-1.1l-0.3-0.2l-3.1,0.8l0.8-3l-0.2-0.3C2.6,12.4,3.8,7.4,7.7,4.9S16.6,3.7,19,7.5C21.4,11.4,20.3,16.5,16.4,18.9"/></svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by tetrisly: https://tetrisly.gumroad.com/l/freeicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M10.825091,2 L13.1738932,2 C14.8491598,2.00379146 15.2338099,2.01854561 16.1226982,2.059103 C17.187141,2.10765278 17.9141174,2.27672349 18.5502266,2.52395815 C19.2078518,2.77948955 19.7655588,3.12144192 20.3215589,3.67740233 C20.8775194,4.23340244 21.2194717,4.79110953 21.4750428,5.44873467 C21.7222377,6.08484389 21.8913085,6.81182019 21.9398582,7.87626307 C21.9869049,8.90737346 21.9992305,9.25998097 22,11.7357029 L22,12.2632942 C21.9992305,14.7389803 21.9869049,15.0915878 21.9398582,16.1226982 C21.8913085,17.187141 21.7222377,17.9141174 21.4750428,18.5502266 C21.2194717,19.2078518 20.8775194,19.7655588 20.3215589,20.3215589 C19.7655588,20.8775194 19.2078518,21.2194717 18.5502266,21.4750428 C17.9141174,21.7222377 17.187141,21.8913085 16.1226982,21.9398582 C15.0915878,21.9869049 14.7389803,21.9992305 12.2632942,22 L11.7357029,22 C9.25998097,21.9992305 8.90737346,21.9869049 7.87626307,21.9398582 C6.81182019,21.8913085 6.08484389,21.7222377 5.44873467,21.4750428 C4.79110953,21.2194717 4.23340244,20.8775194 3.67740233,20.3215589 C3.12144192,19.7655588 2.77948955,19.2078518 2.52395815,18.5502266 C2.27672349,17.9141174 2.10765278,17.187141 2.059103,16.1226982 C2.01854561,15.2338099 2.00379146,14.8491598 2,13.1738932 L2,10.825091 C2.00379146,9.14980144 2.01854561,8.76515134 2.059103,7.87626307 C2.10765278,6.81182019 2.27672349,6.08484389 2.52395815,5.44873467 C2.77948955,4.79110953 3.12144192,4.23340244 3.67740233,3.67740233 C4.23340244,3.12144192 4.79110953,2.77948955 5.44873467,2.52395815 C6.08484389,2.27672349 6.81182019,2.10765278 7.87626307,2.059103 C8.76515134,2.01854561 9.14980144,2.00379146 10.825091,2 L13.1738932,2 L10.825091,2 Z M12.733046,3.80115495 L11.2659442,3.80115495 C9.25857953,3.80324073 8.90746344,3.81583469 7.95839674,3.85913648 C6.98335214,3.90359743 6.45383012,4.06651507 6.10143736,4.20347069 C5.63463704,4.38488726 5.30149746,4.60159471 4.95156594,4.95156594 C4.60159471,5.30149746 4.38488726,5.63463704 4.20347069,6.10143736 C4.06651507,6.45383012 3.90359743,6.98335214 3.85913648,7.95839674 C3.81583469,8.90746344 3.80324073,9.25857953 3.80115495,11.2659442 L3.80115495,12.733046 C3.80324073,14.7403818 3.81583469,15.0914978 3.85913648,16.0405646 C3.90359743,17.0156091 4.06651507,17.5451311 4.20347069,17.8975239 C4.38488726,18.3643242 4.60163441,18.6974638 4.95156594,19.0473953 C5.30149746,19.3973665 5.63463704,19.614074 6.10143736,19.7954906 C6.45383012,19.9324462 6.98335214,20.0953638 7.95839674,20.1398247 C9.0127962,20.1879378 9.32902474,20.1981401 11.9995005,20.1981401 C14.6699365,20.1981401 14.9862047,20.1879378 16.0405646,20.1398247 C17.0156091,20.0953638 17.5451311,19.9324462 17.8975239,19.7954906 C18.3643242,19.614074 18.6974638,19.3973665 19.0473953,19.0473953 C19.3973665,18.6974638 19.614074,18.3643242 19.7954906,17.8975239 C19.9324462,17.5451311 20.0953638,17.0156091 20.1398247,16.0405646 C20.1879378,14.986046 20.1981401,14.6697381 20.1981401,11.9995005 C20.1981401,9.32922322 20.1879378,9.0129153 20.1398247,7.95839674 C20.0953638,6.98335214 19.9324462,6.45383012 19.7954906,6.10143736 C19.614074,5.63463704 19.3973665,5.30149746 19.0473953,4.95156594 C18.6974638,4.60159471 18.3643242,4.38488726 17.8975239,4.20347069 C17.5451311,4.06651507 17.0156091,3.90359743 16.0405646,3.85913648 C15.0914978,3.81583469 14.7403818,3.80324073 12.733046,3.80115495 Z M11.9995,6.99920128 C14.7610764,6.99920128 16.99976,9.23788484 16.99976,11.9995 C16.99976,14.7610764 14.7610764,16.99976 11.9995,16.99976 C9.23788484,16.99976 6.99920128,14.7610764 6.99920128,11.9995 C6.99920128,9.23788484 9.23788484,6.99920128 11.9995,6.99920128 Z M11.9995,8.75368323 C10.2068679,8.75368323 8.75368323,10.2068679 8.75368323,11.9995 C8.75368323,13.7920934 10.2068679,15.245278 11.9995,15.245278 C13.7920934,15.245278 15.245278,13.7920934 15.245278,11.9995 C15.245278,10.2068679 13.7920934,8.75368323 11.9995,8.75368323 Z M17.4164293,5.33244149 C18.1068302,5.33244149 18.6665198,5.89213105 18.6665198,6.58253201 C18.6665198,7.27293296 18.1068302,7.83258117 17.4164293,7.83258117 C16.7260697,7.83258117 16.1663801,7.27293296 16.1663801,6.58253201 C16.1663801,5.89213105 16.7260697,5.33244149 17.4164293,5.33244149 Z"/>
+</svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License: CC Attribution. Made by Just Nick: https://dribbble.com/Lyubarshchuk -->
+<svg  width="23px" height="23px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.72 425.28a32 32 0 0 0-5.12-3.84 17.6 17.6 0 0 0-5.44-2.88 19.84 19.84 0 0 0-6.08-2.56 27.84 27.84 0 0 0-12.48 0 20.8 20.8 0 0 0-5.76 1.92 23.68 23.68 0 0 0-5.76 2.88l-4.8 3.84a32 32 0 0 0-6.72 10.56 30.08 30.08 0 0 0 0 24.32 37.12 37.12 0 0 0 6.72 10.56 36.8 36.8 0 0 0 10.56 6.72A32 32 0 0 0 64 480a32 32 0 0 0 12.16-2.56 37.12 37.12 0 0 0 10.56-6.72 37.12 37.12 0 0 0 6.72-10.56 30.08 30.08 0 0 0 0-24.32 32 32 0 0 0-6.72-10.56zM192 425.28a32 32 0 0 0 12.48-2.56l160-68.48a32 32 0 0 0-25.28-58.88l-160 68.48a32 32 0 0 0 12.8 61.44z" fill="#231815" /><path d="M992 72.96A32 32 0 0 0 992 64a32 32 0 0 0 0-3.2 32 32 0 0 0-1.92-7.36v-3.2a32 32 0 0 0-4.8-7.04 32 32 0 0 0-8.64-5.44h-2.88a32 32 0 0 0-11.2-5.76H960a32 32 0 0 0-7.68 0h-2.88l-480 205.76a32 32 0 0 0 25.28 58.88l288-123.52L288 597.76l-107.2-91.84a32 32 0 0 0-41.6 48.64l111.68 96-89.28 267.2a51036.16 51036.16 0 0 0 0 8.32 32 32 0 0 0 0 8.64v2.24a32 32 0 0 0 2.24 4.8 32 32 0 0 0 2.24 4.48l2.88 2.88a32 32 0 0 0 4.48 4.48h3.52l5.44 2.56h4.8L192 960h8l314.56-96 136.64 119.36a32 32 0 0 0 52.8-13.44l288-896z m-597.76 640l-135.36 115.52 56.64-169.92L713.92 317.12z m-64 140.16L416 778.24l41.92 36.48z m328.96 49.92l-196.16-171.52 416-514.88z" fill="#231815" /></svg>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-images">
+                            <img src="https://kindi-react.vercel.app/img/home-1/team/02.jpg" alt="">
+                            <div class="teams-images-content">
+                                <h4>Courtney Henry</h4>
+                                <p>Software Developer</p>
+                                <div class="teams-svgs">
+                                    <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Microsoft: https://github.com/microsoft/vscode-codicons -->
+<svg width="23px" height="23px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#0b4e3d"><path d="M15 3.784a5.63 5.63 0 0 1-.65.803 6.058 6.058 0 0 1-.786.68 5.442 5.442 0 0 1 .014.377c0 .574-.061 1.141-.184 1.702a8.467 8.467 0 0 1-.534 1.627 8.444 8.444 0 0 1-1.264 2.04 7.768 7.768 0 0 1-1.72 1.521 7.835 7.835 0 0 1-2.095.95 8.524 8.524 0 0 1-2.379.329 8.178 8.178 0 0 1-2.293-.325A7.921 7.921 0 0 1 1 12.52a5.762 5.762 0 0 0 4.252-1.19 2.842 2.842 0 0 1-2.273-1.19 2.878 2.878 0 0 1-.407-.8c.091.014.181.026.27.035a2.797 2.797 0 0 0 1.022-.089 2.808 2.808 0 0 1-.926-.362 2.942 2.942 0 0 1-.728-.633 2.839 2.839 0 0 1-.65-1.822v-.033c.402.227.837.348 1.306.362a2.943 2.943 0 0 1-.936-1.04 2.955 2.955 0 0 1-.253-.649 2.945 2.945 0 0 1 .007-1.453c.063-.243.161-.474.294-.693.364.451.77.856 1.216 1.213a8.215 8.215 0 0 0 3.008 1.525 7.965 7.965 0 0 0 1.695.263 2.15 2.15 0 0 1-.058-.325 3.265 3.265 0 0 1-.017-.331c0-.397.075-.77.226-1.118a2.892 2.892 0 0 1 1.528-1.528 2.79 2.79 0 0 1 1.117-.225 2.846 2.846 0 0 1 2.099.909 5.7 5.7 0 0 0 1.818-.698 2.815 2.815 0 0 1-1.258 1.586A5.704 5.704 0 0 0 15 3.785z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" version="1.1" id="svg8" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" sodipodi:docname="1881161.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve"><path id="path4" inkscape:connector-curvature="0" d="M16.6,14c-0.2-0.1-1.5-0.7-1.7-0.8c-0.2-0.1-0.4-0.1-0.6,0.1c-0.2,0.2-0.6,0.8-0.8,1c-0.1,0.2-0.3,0.2-0.5,0.1c-0.7-0.3-1.4-0.7-2-1.2c-0.5-0.5-1-1.1-1.4-1.7c-0.1-0.2,0-0.4,0.1-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.6-1.3-0.8-1.8C9.4,7.3,9.2,7.3,9,7.3c-0.1,0-0.3,0-0.5,0C8.3,7.3,8,7.5,7.9,7.6C7.3,8.2,7,8.9,7,9.7c0.1,0.9,0.4,1.8,1,2.6c1.1,1.6,2.5,2.9,4.2,3.7c0.5,0.2,0.9,0.4,1.4,0.5c0.5,0.2,1,0.2,1.6,0.1c0.7-0.1,1.3-0.6,1.7-1.2c0.2-0.4,0.2-0.8,0.1-1.2C17,14.2,16.8,14.1,16.6,14 M19.1,4.9C15.2,1,8.9,1,5,4.9c-3.2,3.2-3.8,8.1-1.6,12L2,22l5.3-1.4c1.5,0.8,3.1,1.2,4.7,1.2h0c5.5,0,9.9-4.4,9.9-9.9C22,9.3,20.9,6.8,19.1,4.9 M16.4,18.9c-1.3,0.8-2.8,1.3-4.4,1.3h0c-1.5,0-2.9-0.4-4.2-1.1l-0.3-0.2l-3.1,0.8l0.8-3l-0.2-0.3C2.6,12.4,3.8,7.4,7.7,4.9S16.6,3.7,19,7.5C21.4,11.4,20.3,16.5,16.4,18.9"/></svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by tetrisly: https://tetrisly.gumroad.com/l/freeicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M10.825091,2 L13.1738932,2 C14.8491598,2.00379146 15.2338099,2.01854561 16.1226982,2.059103 C17.187141,2.10765278 17.9141174,2.27672349 18.5502266,2.52395815 C19.2078518,2.77948955 19.7655588,3.12144192 20.3215589,3.67740233 C20.8775194,4.23340244 21.2194717,4.79110953 21.4750428,5.44873467 C21.7222377,6.08484389 21.8913085,6.81182019 21.9398582,7.87626307 C21.9869049,8.90737346 21.9992305,9.25998097 22,11.7357029 L22,12.2632942 C21.9992305,14.7389803 21.9869049,15.0915878 21.9398582,16.1226982 C21.8913085,17.187141 21.7222377,17.9141174 21.4750428,18.5502266 C21.2194717,19.2078518 20.8775194,19.7655588 20.3215589,20.3215589 C19.7655588,20.8775194 19.2078518,21.2194717 18.5502266,21.4750428 C17.9141174,21.7222377 17.187141,21.8913085 16.1226982,21.9398582 C15.0915878,21.9869049 14.7389803,21.9992305 12.2632942,22 L11.7357029,22 C9.25998097,21.9992305 8.90737346,21.9869049 7.87626307,21.9398582 C6.81182019,21.8913085 6.08484389,21.7222377 5.44873467,21.4750428 C4.79110953,21.2194717 4.23340244,20.8775194 3.67740233,20.3215589 C3.12144192,19.7655588 2.77948955,19.2078518 2.52395815,18.5502266 C2.27672349,17.9141174 2.10765278,17.187141 2.059103,16.1226982 C2.01854561,15.2338099 2.00379146,14.8491598 2,13.1738932 L2,10.825091 C2.00379146,9.14980144 2.01854561,8.76515134 2.059103,7.87626307 C2.10765278,6.81182019 2.27672349,6.08484389 2.52395815,5.44873467 C2.77948955,4.79110953 3.12144192,4.23340244 3.67740233,3.67740233 C4.23340244,3.12144192 4.79110953,2.77948955 5.44873467,2.52395815 C6.08484389,2.27672349 6.81182019,2.10765278 7.87626307,2.059103 C8.76515134,2.01854561 9.14980144,2.00379146 10.825091,2 L13.1738932,2 L10.825091,2 Z M12.733046,3.80115495 L11.2659442,3.80115495 C9.25857953,3.80324073 8.90746344,3.81583469 7.95839674,3.85913648 C6.98335214,3.90359743 6.45383012,4.06651507 6.10143736,4.20347069 C5.63463704,4.38488726 5.30149746,4.60159471 4.95156594,4.95156594 C4.60159471,5.30149746 4.38488726,5.63463704 4.20347069,6.10143736 C4.06651507,6.45383012 3.90359743,6.98335214 3.85913648,7.95839674 C3.81583469,8.90746344 3.80324073,9.25857953 3.80115495,11.2659442 L3.80115495,12.733046 C3.80324073,14.7403818 3.81583469,15.0914978 3.85913648,16.0405646 C3.90359743,17.0156091 4.06651507,17.5451311 4.20347069,17.8975239 C4.38488726,18.3643242 4.60163441,18.6974638 4.95156594,19.0473953 C5.30149746,19.3973665 5.63463704,19.614074 6.10143736,19.7954906 C6.45383012,19.9324462 6.98335214,20.0953638 7.95839674,20.1398247 C9.0127962,20.1879378 9.32902474,20.1981401 11.9995005,20.1981401 C14.6699365,20.1981401 14.9862047,20.1879378 16.0405646,20.1398247 C17.0156091,20.0953638 17.5451311,19.9324462 17.8975239,19.7954906 C18.3643242,19.614074 18.6974638,19.3973665 19.0473953,19.0473953 C19.3973665,18.6974638 19.614074,18.3643242 19.7954906,17.8975239 C19.9324462,17.5451311 20.0953638,17.0156091 20.1398247,16.0405646 C20.1879378,14.986046 20.1981401,14.6697381 20.1981401,11.9995005 C20.1981401,9.32922322 20.1879378,9.0129153 20.1398247,7.95839674 C20.0953638,6.98335214 19.9324462,6.45383012 19.7954906,6.10143736 C19.614074,5.63463704 19.3973665,5.30149746 19.0473953,4.95156594 C18.6974638,4.60159471 18.3643242,4.38488726 17.8975239,4.20347069 C17.5451311,4.06651507 17.0156091,3.90359743 16.0405646,3.85913648 C15.0914978,3.81583469 14.7403818,3.80324073 12.733046,3.80115495 Z M11.9995,6.99920128 C14.7610764,6.99920128 16.99976,9.23788484 16.99976,11.9995 C16.99976,14.7610764 14.7610764,16.99976 11.9995,16.99976 C9.23788484,16.99976 6.99920128,14.7610764 6.99920128,11.9995 C6.99920128,9.23788484 9.23788484,6.99920128 11.9995,6.99920128 Z M11.9995,8.75368323 C10.2068679,8.75368323 8.75368323,10.2068679 8.75368323,11.9995 C8.75368323,13.7920934 10.2068679,15.245278 11.9995,15.245278 C13.7920934,15.245278 15.245278,13.7920934 15.245278,11.9995 C15.245278,10.2068679 13.7920934,8.75368323 11.9995,8.75368323 Z M17.4164293,5.33244149 C18.1068302,5.33244149 18.6665198,5.89213105 18.6665198,6.58253201 C18.6665198,7.27293296 18.1068302,7.83258117 17.4164293,7.83258117 C16.7260697,7.83258117 16.1663801,7.27293296 16.1663801,6.58253201 C16.1663801,5.89213105 16.7260697,5.33244149 17.4164293,5.33244149 Z"/>
+</svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License: CC Attribution. Made by Just Nick: https://dribbble.com/Lyubarshchuk -->
+<svg  width="23px" height="23px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.72 425.28a32 32 0 0 0-5.12-3.84 17.6 17.6 0 0 0-5.44-2.88 19.84 19.84 0 0 0-6.08-2.56 27.84 27.84 0 0 0-12.48 0 20.8 20.8 0 0 0-5.76 1.92 23.68 23.68 0 0 0-5.76 2.88l-4.8 3.84a32 32 0 0 0-6.72 10.56 30.08 30.08 0 0 0 0 24.32 37.12 37.12 0 0 0 6.72 10.56 36.8 36.8 0 0 0 10.56 6.72A32 32 0 0 0 64 480a32 32 0 0 0 12.16-2.56 37.12 37.12 0 0 0 10.56-6.72 37.12 37.12 0 0 0 6.72-10.56 30.08 30.08 0 0 0 0-24.32 32 32 0 0 0-6.72-10.56zM192 425.28a32 32 0 0 0 12.48-2.56l160-68.48a32 32 0 0 0-25.28-58.88l-160 68.48a32 32 0 0 0 12.8 61.44z" fill="#231815" /><path d="M992 72.96A32 32 0 0 0 992 64a32 32 0 0 0 0-3.2 32 32 0 0 0-1.92-7.36v-3.2a32 32 0 0 0-4.8-7.04 32 32 0 0 0-8.64-5.44h-2.88a32 32 0 0 0-11.2-5.76H960a32 32 0 0 0-7.68 0h-2.88l-480 205.76a32 32 0 0 0 25.28 58.88l288-123.52L288 597.76l-107.2-91.84a32 32 0 0 0-41.6 48.64l111.68 96-89.28 267.2a51036.16 51036.16 0 0 0 0 8.32 32 32 0 0 0 0 8.64v2.24a32 32 0 0 0 2.24 4.8 32 32 0 0 0 2.24 4.48l2.88 2.88a32 32 0 0 0 4.48 4.48h3.52l5.44 2.56h4.8L192 960h8l314.56-96 136.64 119.36a32 32 0 0 0 52.8-13.44l288-896z m-597.76 640l-135.36 115.52 56.64-169.92L713.92 317.12z m-64 140.16L416 778.24l41.92 36.48z m328.96 49.92l-196.16-171.52 416-514.88z" fill="#231815" /></svg>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-images">
+                            <img src="https://kindi-react.vercel.app/img/home-1/team/03.jpg" alt="">
+                            <div class="teams-images-content">
+                                <h4>Annette Black</h4>
+                                <p>Software Developer</p>
+                                <div class="teams-svgs">
+                                    <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Microsoft: https://github.com/microsoft/vscode-codicons -->
+<svg width="23px" height="23px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#0b4e3d"><path d="M15 3.784a5.63 5.63 0 0 1-.65.803 6.058 6.058 0 0 1-.786.68 5.442 5.442 0 0 1 .014.377c0 .574-.061 1.141-.184 1.702a8.467 8.467 0 0 1-.534 1.627 8.444 8.444 0 0 1-1.264 2.04 7.768 7.768 0 0 1-1.72 1.521 7.835 7.835 0 0 1-2.095.95 8.524 8.524 0 0 1-2.379.329 8.178 8.178 0 0 1-2.293-.325A7.921 7.921 0 0 1 1 12.52a5.762 5.762 0 0 0 4.252-1.19 2.842 2.842 0 0 1-2.273-1.19 2.878 2.878 0 0 1-.407-.8c.091.014.181.026.27.035a2.797 2.797 0 0 0 1.022-.089 2.808 2.808 0 0 1-.926-.362 2.942 2.942 0 0 1-.728-.633 2.839 2.839 0 0 1-.65-1.822v-.033c.402.227.837.348 1.306.362a2.943 2.943 0 0 1-.936-1.04 2.955 2.955 0 0 1-.253-.649 2.945 2.945 0 0 1 .007-1.453c.063-.243.161-.474.294-.693.364.451.77.856 1.216 1.213a8.215 8.215 0 0 0 3.008 1.525 7.965 7.965 0 0 0 1.695.263 2.15 2.15 0 0 1-.058-.325 3.265 3.265 0 0 1-.017-.331c0-.397.075-.77.226-1.118a2.892 2.892 0 0 1 1.528-1.528 2.79 2.79 0 0 1 1.117-.225 2.846 2.846 0 0 1 2.099.909 5.7 5.7 0 0 0 1.818-.698 2.815 2.815 0 0 1-1.258 1.586A5.704 5.704 0 0 0 15 3.785z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" version="1.1" id="svg8" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" sodipodi:docname="1881161.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve"><path id="path4" inkscape:connector-curvature="0" d="M16.6,14c-0.2-0.1-1.5-0.7-1.7-0.8c-0.2-0.1-0.4-0.1-0.6,0.1c-0.2,0.2-0.6,0.8-0.8,1c-0.1,0.2-0.3,0.2-0.5,0.1c-0.7-0.3-1.4-0.7-2-1.2c-0.5-0.5-1-1.1-1.4-1.7c-0.1-0.2,0-0.4,0.1-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.6-1.3-0.8-1.8C9.4,7.3,9.2,7.3,9,7.3c-0.1,0-0.3,0-0.5,0C8.3,7.3,8,7.5,7.9,7.6C7.3,8.2,7,8.9,7,9.7c0.1,0.9,0.4,1.8,1,2.6c1.1,1.6,2.5,2.9,4.2,3.7c0.5,0.2,0.9,0.4,1.4,0.5c0.5,0.2,1,0.2,1.6,0.1c0.7-0.1,1.3-0.6,1.7-1.2c0.2-0.4,0.2-0.8,0.1-1.2C17,14.2,16.8,14.1,16.6,14 M19.1,4.9C15.2,1,8.9,1,5,4.9c-3.2,3.2-3.8,8.1-1.6,12L2,22l5.3-1.4c1.5,0.8,3.1,1.2,4.7,1.2h0c5.5,0,9.9-4.4,9.9-9.9C22,9.3,20.9,6.8,19.1,4.9 M16.4,18.9c-1.3,0.8-2.8,1.3-4.4,1.3h0c-1.5,0-2.9-0.4-4.2-1.1l-0.3-0.2l-3.1,0.8l0.8-3l-0.2-0.3C2.6,12.4,3.8,7.4,7.7,4.9S16.6,3.7,19,7.5C21.4,11.4,20.3,16.5,16.4,18.9"/></svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by tetrisly: https://tetrisly.gumroad.com/l/freeicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M10.825091,2 L13.1738932,2 C14.8491598,2.00379146 15.2338099,2.01854561 16.1226982,2.059103 C17.187141,2.10765278 17.9141174,2.27672349 18.5502266,2.52395815 C19.2078518,2.77948955 19.7655588,3.12144192 20.3215589,3.67740233 C20.8775194,4.23340244 21.2194717,4.79110953 21.4750428,5.44873467 C21.7222377,6.08484389 21.8913085,6.81182019 21.9398582,7.87626307 C21.9869049,8.90737346 21.9992305,9.25998097 22,11.7357029 L22,12.2632942 C21.9992305,14.7389803 21.9869049,15.0915878 21.9398582,16.1226982 C21.8913085,17.187141 21.7222377,17.9141174 21.4750428,18.5502266 C21.2194717,19.2078518 20.8775194,19.7655588 20.3215589,20.3215589 C19.7655588,20.8775194 19.2078518,21.2194717 18.5502266,21.4750428 C17.9141174,21.7222377 17.187141,21.8913085 16.1226982,21.9398582 C15.0915878,21.9869049 14.7389803,21.9992305 12.2632942,22 L11.7357029,22 C9.25998097,21.9992305 8.90737346,21.9869049 7.87626307,21.9398582 C6.81182019,21.8913085 6.08484389,21.7222377 5.44873467,21.4750428 C4.79110953,21.2194717 4.23340244,20.8775194 3.67740233,20.3215589 C3.12144192,19.7655588 2.77948955,19.2078518 2.52395815,18.5502266 C2.27672349,17.9141174 2.10765278,17.187141 2.059103,16.1226982 C2.01854561,15.2338099 2.00379146,14.8491598 2,13.1738932 L2,10.825091 C2.00379146,9.14980144 2.01854561,8.76515134 2.059103,7.87626307 C2.10765278,6.81182019 2.27672349,6.08484389 2.52395815,5.44873467 C2.77948955,4.79110953 3.12144192,4.23340244 3.67740233,3.67740233 C4.23340244,3.12144192 4.79110953,2.77948955 5.44873467,2.52395815 C6.08484389,2.27672349 6.81182019,2.10765278 7.87626307,2.059103 C8.76515134,2.01854561 9.14980144,2.00379146 10.825091,2 L13.1738932,2 L10.825091,2 Z M12.733046,3.80115495 L11.2659442,3.80115495 C9.25857953,3.80324073 8.90746344,3.81583469 7.95839674,3.85913648 C6.98335214,3.90359743 6.45383012,4.06651507 6.10143736,4.20347069 C5.63463704,4.38488726 5.30149746,4.60159471 4.95156594,4.95156594 C4.60159471,5.30149746 4.38488726,5.63463704 4.20347069,6.10143736 C4.06651507,6.45383012 3.90359743,6.98335214 3.85913648,7.95839674 C3.81583469,8.90746344 3.80324073,9.25857953 3.80115495,11.2659442 L3.80115495,12.733046 C3.80324073,14.7403818 3.81583469,15.0914978 3.85913648,16.0405646 C3.90359743,17.0156091 4.06651507,17.5451311 4.20347069,17.8975239 C4.38488726,18.3643242 4.60163441,18.6974638 4.95156594,19.0473953 C5.30149746,19.3973665 5.63463704,19.614074 6.10143736,19.7954906 C6.45383012,19.9324462 6.98335214,20.0953638 7.95839674,20.1398247 C9.0127962,20.1879378 9.32902474,20.1981401 11.9995005,20.1981401 C14.6699365,20.1981401 14.9862047,20.1879378 16.0405646,20.1398247 C17.0156091,20.0953638 17.5451311,19.9324462 17.8975239,19.7954906 C18.3643242,19.614074 18.6974638,19.3973665 19.0473953,19.0473953 C19.3973665,18.6974638 19.614074,18.3643242 19.7954906,17.8975239 C19.9324462,17.5451311 20.0953638,17.0156091 20.1398247,16.0405646 C20.1879378,14.986046 20.1981401,14.6697381 20.1981401,11.9995005 C20.1981401,9.32922322 20.1879378,9.0129153 20.1398247,7.95839674 C20.0953638,6.98335214 19.9324462,6.45383012 19.7954906,6.10143736 C19.614074,5.63463704 19.3973665,5.30149746 19.0473953,4.95156594 C18.6974638,4.60159471 18.3643242,4.38488726 17.8975239,4.20347069 C17.5451311,4.06651507 17.0156091,3.90359743 16.0405646,3.85913648 C15.0914978,3.81583469 14.7403818,3.80324073 12.733046,3.80115495 Z M11.9995,6.99920128 C14.7610764,6.99920128 16.99976,9.23788484 16.99976,11.9995 C16.99976,14.7610764 14.7610764,16.99976 11.9995,16.99976 C9.23788484,16.99976 6.99920128,14.7610764 6.99920128,11.9995 C6.99920128,9.23788484 9.23788484,6.99920128 11.9995,6.99920128 Z M11.9995,8.75368323 C10.2068679,8.75368323 8.75368323,10.2068679 8.75368323,11.9995 C8.75368323,13.7920934 10.2068679,15.245278 11.9995,15.245278 C13.7920934,15.245278 15.245278,13.7920934 15.245278,11.9995 C15.245278,10.2068679 13.7920934,8.75368323 11.9995,8.75368323 Z M17.4164293,5.33244149 C18.1068302,5.33244149 18.6665198,5.89213105 18.6665198,6.58253201 C18.6665198,7.27293296 18.1068302,7.83258117 17.4164293,7.83258117 C16.7260697,7.83258117 16.1663801,7.27293296 16.1663801,6.58253201 C16.1663801,5.89213105 16.7260697,5.33244149 17.4164293,5.33244149 Z"/>
+</svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License: CC Attribution. Made by Just Nick: https://dribbble.com/Lyubarshchuk -->
+<svg  width="23px" height="23px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.72 425.28a32 32 0 0 0-5.12-3.84 17.6 17.6 0 0 0-5.44-2.88 19.84 19.84 0 0 0-6.08-2.56 27.84 27.84 0 0 0-12.48 0 20.8 20.8 0 0 0-5.76 1.92 23.68 23.68 0 0 0-5.76 2.88l-4.8 3.84a32 32 0 0 0-6.72 10.56 30.08 30.08 0 0 0 0 24.32 37.12 37.12 0 0 0 6.72 10.56 36.8 36.8 0 0 0 10.56 6.72A32 32 0 0 0 64 480a32 32 0 0 0 12.16-2.56 37.12 37.12 0 0 0 10.56-6.72 37.12 37.12 0 0 0 6.72-10.56 30.08 30.08 0 0 0 0-24.32 32 32 0 0 0-6.72-10.56zM192 425.28a32 32 0 0 0 12.48-2.56l160-68.48a32 32 0 0 0-25.28-58.88l-160 68.48a32 32 0 0 0 12.8 61.44z" fill="#231815" /><path d="M992 72.96A32 32 0 0 0 992 64a32 32 0 0 0 0-3.2 32 32 0 0 0-1.92-7.36v-3.2a32 32 0 0 0-4.8-7.04 32 32 0 0 0-8.64-5.44h-2.88a32 32 0 0 0-11.2-5.76H960a32 32 0 0 0-7.68 0h-2.88l-480 205.76a32 32 0 0 0 25.28 58.88l288-123.52L288 597.76l-107.2-91.84a32 32 0 0 0-41.6 48.64l111.68 96-89.28 267.2a51036.16 51036.16 0 0 0 0 8.32 32 32 0 0 0 0 8.64v2.24a32 32 0 0 0 2.24 4.8 32 32 0 0 0 2.24 4.48l2.88 2.88a32 32 0 0 0 4.48 4.48h3.52l5.44 2.56h4.8L192 960h8l314.56-96 136.64 119.36a32 32 0 0 0 52.8-13.44l288-896z m-597.76 640l-135.36 115.52 56.64-169.92L713.92 317.12z m-64 140.16L416 778.24l41.92 36.48z m328.96 49.92l-196.16-171.52 416-514.88z" fill="#231815" /></svg>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-images">
+                            <img src="https://kindi-react.vercel.app/img/home-1/team/04.jpg" alt="">
+                            <div class="teams-images-content">
+                                <h4>Kristin Watson</h4>
+                                <p>Software Developer</p>
+                                <div class="teams-svgs">
+                                    <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Microsoft: https://github.com/microsoft/vscode-codicons -->
+<svg width="23px" height="23px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#0b4e3d"><path d="M15 3.784a5.63 5.63 0 0 1-.65.803 6.058 6.058 0 0 1-.786.68 5.442 5.442 0 0 1 .014.377c0 .574-.061 1.141-.184 1.702a8.467 8.467 0 0 1-.534 1.627 8.444 8.444 0 0 1-1.264 2.04 7.768 7.768 0 0 1-1.72 1.521 7.835 7.835 0 0 1-2.095.95 8.524 8.524 0 0 1-2.379.329 8.178 8.178 0 0 1-2.293-.325A7.921 7.921 0 0 1 1 12.52a5.762 5.762 0 0 0 4.252-1.19 2.842 2.842 0 0 1-2.273-1.19 2.878 2.878 0 0 1-.407-.8c.091.014.181.026.27.035a2.797 2.797 0 0 0 1.022-.089 2.808 2.808 0 0 1-.926-.362 2.942 2.942 0 0 1-.728-.633 2.839 2.839 0 0 1-.65-1.822v-.033c.402.227.837.348 1.306.362a2.943 2.943 0 0 1-.936-1.04 2.955 2.955 0 0 1-.253-.649 2.945 2.945 0 0 1 .007-1.453c.063-.243.161-.474.294-.693.364.451.77.856 1.216 1.213a8.215 8.215 0 0 0 3.008 1.525 7.965 7.965 0 0 0 1.695.263 2.15 2.15 0 0 1-.058-.325 3.265 3.265 0 0 1-.017-.331c0-.397.075-.77.226-1.118a2.892 2.892 0 0 1 1.528-1.528 2.79 2.79 0 0 1 1.117-.225 2.846 2.846 0 0 1 2.099.909 5.7 5.7 0 0 0 1.818-.698 2.815 2.815 0 0 1-1.258 1.586A5.704 5.704 0 0 0 15 3.785z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" version="1.1" id="svg8" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" sodipodi:docname="1881161.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve"><path id="path4" inkscape:connector-curvature="0" d="M16.6,14c-0.2-0.1-1.5-0.7-1.7-0.8c-0.2-0.1-0.4-0.1-0.6,0.1c-0.2,0.2-0.6,0.8-0.8,1c-0.1,0.2-0.3,0.2-0.5,0.1c-0.7-0.3-1.4-0.7-2-1.2c-0.5-0.5-1-1.1-1.4-1.7c-0.1-0.2,0-0.4,0.1-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.6-1.3-0.8-1.8C9.4,7.3,9.2,7.3,9,7.3c-0.1,0-0.3,0-0.5,0C8.3,7.3,8,7.5,7.9,7.6C7.3,8.2,7,8.9,7,9.7c0.1,0.9,0.4,1.8,1,2.6c1.1,1.6,2.5,2.9,4.2,3.7c0.5,0.2,0.9,0.4,1.4,0.5c0.5,0.2,1,0.2,1.6,0.1c0.7-0.1,1.3-0.6,1.7-1.2c0.2-0.4,0.2-0.8,0.1-1.2C17,14.2,16.8,14.1,16.6,14 M19.1,4.9C15.2,1,8.9,1,5,4.9c-3.2,3.2-3.8,8.1-1.6,12L2,22l5.3-1.4c1.5,0.8,3.1,1.2,4.7,1.2h0c5.5,0,9.9-4.4,9.9-9.9C22,9.3,20.9,6.8,19.1,4.9 M16.4,18.9c-1.3,0.8-2.8,1.3-4.4,1.3h0c-1.5,0-2.9-0.4-4.2-1.1l-0.3-0.2l-3.1,0.8l0.8-3l-0.2-0.3C2.6,12.4,3.8,7.4,7.7,4.9S16.6,3.7,19,7.5C21.4,11.4,20.3,16.5,16.4,18.9"/></svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: CC Attribution. Made by tetrisly: https://tetrisly.gumroad.com/l/freeicons -->
+<svg fill="#0b4e3d" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M10.825091,2 L13.1738932,2 C14.8491598,2.00379146 15.2338099,2.01854561 16.1226982,2.059103 C17.187141,2.10765278 17.9141174,2.27672349 18.5502266,2.52395815 C19.2078518,2.77948955 19.7655588,3.12144192 20.3215589,3.67740233 C20.8775194,4.23340244 21.2194717,4.79110953 21.4750428,5.44873467 C21.7222377,6.08484389 21.8913085,6.81182019 21.9398582,7.87626307 C21.9869049,8.90737346 21.9992305,9.25998097 22,11.7357029 L22,12.2632942 C21.9992305,14.7389803 21.9869049,15.0915878 21.9398582,16.1226982 C21.8913085,17.187141 21.7222377,17.9141174 21.4750428,18.5502266 C21.2194717,19.2078518 20.8775194,19.7655588 20.3215589,20.3215589 C19.7655588,20.8775194 19.2078518,21.2194717 18.5502266,21.4750428 C17.9141174,21.7222377 17.187141,21.8913085 16.1226982,21.9398582 C15.0915878,21.9869049 14.7389803,21.9992305 12.2632942,22 L11.7357029,22 C9.25998097,21.9992305 8.90737346,21.9869049 7.87626307,21.9398582 C6.81182019,21.8913085 6.08484389,21.7222377 5.44873467,21.4750428 C4.79110953,21.2194717 4.23340244,20.8775194 3.67740233,20.3215589 C3.12144192,19.7655588 2.77948955,19.2078518 2.52395815,18.5502266 C2.27672349,17.9141174 2.10765278,17.187141 2.059103,16.1226982 C2.01854561,15.2338099 2.00379146,14.8491598 2,13.1738932 L2,10.825091 C2.00379146,9.14980144 2.01854561,8.76515134 2.059103,7.87626307 C2.10765278,6.81182019 2.27672349,6.08484389 2.52395815,5.44873467 C2.77948955,4.79110953 3.12144192,4.23340244 3.67740233,3.67740233 C4.23340244,3.12144192 4.79110953,2.77948955 5.44873467,2.52395815 C6.08484389,2.27672349 6.81182019,2.10765278 7.87626307,2.059103 C8.76515134,2.01854561 9.14980144,2.00379146 10.825091,2 L13.1738932,2 L10.825091,2 Z M12.733046,3.80115495 L11.2659442,3.80115495 C9.25857953,3.80324073 8.90746344,3.81583469 7.95839674,3.85913648 C6.98335214,3.90359743 6.45383012,4.06651507 6.10143736,4.20347069 C5.63463704,4.38488726 5.30149746,4.60159471 4.95156594,4.95156594 C4.60159471,5.30149746 4.38488726,5.63463704 4.20347069,6.10143736 C4.06651507,6.45383012 3.90359743,6.98335214 3.85913648,7.95839674 C3.81583469,8.90746344 3.80324073,9.25857953 3.80115495,11.2659442 L3.80115495,12.733046 C3.80324073,14.7403818 3.81583469,15.0914978 3.85913648,16.0405646 C3.90359743,17.0156091 4.06651507,17.5451311 4.20347069,17.8975239 C4.38488726,18.3643242 4.60163441,18.6974638 4.95156594,19.0473953 C5.30149746,19.3973665 5.63463704,19.614074 6.10143736,19.7954906 C6.45383012,19.9324462 6.98335214,20.0953638 7.95839674,20.1398247 C9.0127962,20.1879378 9.32902474,20.1981401 11.9995005,20.1981401 C14.6699365,20.1981401 14.9862047,20.1879378 16.0405646,20.1398247 C17.0156091,20.0953638 17.5451311,19.9324462 17.8975239,19.7954906 C18.3643242,19.614074 18.6974638,19.3973665 19.0473953,19.0473953 C19.3973665,18.6974638 19.614074,18.3643242 19.7954906,17.8975239 C19.9324462,17.5451311 20.0953638,17.0156091 20.1398247,16.0405646 C20.1879378,14.986046 20.1981401,14.6697381 20.1981401,11.9995005 C20.1981401,9.32922322 20.1879378,9.0129153 20.1398247,7.95839674 C20.0953638,6.98335214 19.9324462,6.45383012 19.7954906,6.10143736 C19.614074,5.63463704 19.3973665,5.30149746 19.0473953,4.95156594 C18.6974638,4.60159471 18.3643242,4.38488726 17.8975239,4.20347069 C17.5451311,4.06651507 17.0156091,3.90359743 16.0405646,3.85913648 C15.0914978,3.81583469 14.7403818,3.80324073 12.733046,3.80115495 Z M11.9995,6.99920128 C14.7610764,6.99920128 16.99976,9.23788484 16.99976,11.9995 C16.99976,14.7610764 14.7610764,16.99976 11.9995,16.99976 C9.23788484,16.99976 6.99920128,14.7610764 6.99920128,11.9995 C6.99920128,9.23788484 9.23788484,6.99920128 11.9995,6.99920128 Z M11.9995,8.75368323 C10.2068679,8.75368323 8.75368323,10.2068679 8.75368323,11.9995 C8.75368323,13.7920934 10.2068679,15.245278 11.9995,15.245278 C13.7920934,15.245278 15.245278,13.7920934 15.245278,11.9995 C15.245278,10.2068679 13.7920934,8.75368323 11.9995,8.75368323 Z M17.4164293,5.33244149 C18.1068302,5.33244149 18.6665198,5.89213105 18.6665198,6.58253201 C18.6665198,7.27293296 18.1068302,7.83258117 17.4164293,7.83258117 C16.7260697,7.83258117 16.1663801,7.27293296 16.1663801,6.58253201 C16.1663801,5.89213105 16.7260697,5.33244149 17.4164293,5.33244149 Z"/>
+</svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License: CC Attribution. Made by Just Nick: https://dribbble.com/Lyubarshchuk -->
+<svg  width="23px" height="23px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.72 425.28a32 32 0 0 0-5.12-3.84 17.6 17.6 0 0 0-5.44-2.88 19.84 19.84 0 0 0-6.08-2.56 27.84 27.84 0 0 0-12.48 0 20.8 20.8 0 0 0-5.76 1.92 23.68 23.68 0 0 0-5.76 2.88l-4.8 3.84a32 32 0 0 0-6.72 10.56 30.08 30.08 0 0 0 0 24.32 37.12 37.12 0 0 0 6.72 10.56 36.8 36.8 0 0 0 10.56 6.72A32 32 0 0 0 64 480a32 32 0 0 0 12.16-2.56 37.12 37.12 0 0 0 10.56-6.72 37.12 37.12 0 0 0 6.72-10.56 30.08 30.08 0 0 0 0-24.32 32 32 0 0 0-6.72-10.56zM192 425.28a32 32 0 0 0 12.48-2.56l160-68.48a32 32 0 0 0-25.28-58.88l-160 68.48a32 32 0 0 0 12.8 61.44z" fill="#231815" /><path d="M992 72.96A32 32 0 0 0 992 64a32 32 0 0 0 0-3.2 32 32 0 0 0-1.92-7.36v-3.2a32 32 0 0 0-4.8-7.04 32 32 0 0 0-8.64-5.44h-2.88a32 32 0 0 0-11.2-5.76H960a32 32 0 0 0-7.68 0h-2.88l-480 205.76a32 32 0 0 0 25.28 58.88l288-123.52L288 597.76l-107.2-91.84a32 32 0 0 0-41.6 48.64l111.68 96-89.28 267.2a51036.16 51036.16 0 0 0 0 8.32 32 32 0 0 0 0 8.64v2.24a32 32 0 0 0 2.24 4.8 32 32 0 0 0 2.24 4.48l2.88 2.88a32 32 0 0 0 4.48 4.48h3.52l5.44 2.56h4.8L192 960h8l314.56-96 136.64 119.36a32 32 0 0 0 52.8-13.44l288-896z m-597.76 640l-135.36 115.52 56.64-169.92L713.92 317.12z m-64 140.16L416 778.24l41.92 36.48z m328.96 49.92l-196.16-171.52 416-514.88z" fill="#231815" /></svg>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="testimonials-section">
+            <div class="testimonials-wrapper">
+                <div class="testimonials">
+                    <h4>testimonials</h4>
+                    <h1>What People say about our charity.</h1>
+                </div>
+                <div class="tesimonials-image">
+                    <img src="https://kindi-react.vercel.app/img/home-1/testimonial/01.jpg" alt="">
+                    <!-- <img class="testimonials-left-image" src="https://kindi-react.vercel.app/img/home-1/testimonial/shape.png" alt=""> -->
+                    <div class="tesimonials-content">
+                        <p>"Overall, I Cannot Recommend The Gourmet Bistro Highly Enough. If You're Looking For A Restaurant That Serves Delicious, Beautifully Presented Dishes With Impeccable Service, Look No Further. I Will Definitely Be Returning Soon To Try More Of Their Culinary Delight”</p>
+                        <h3>Jonny Ananta</h3>
+                        <h5>Regular Customer's</h5>
+                        <div class="divider"></div>
+                        <p>Total raising money in this year > <span>$4,50,000</span></p>
+                         <div class="logos-slider">
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/02.png" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/03.png" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/04.png" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/01.png" alt="">
+
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/02.png" alt="">
+                    <!-- <img src="https://kindi-react.vercel.app/img/home-1/brand/03.png" alt=""> -->
+                    <!-- <img src="https://kindi-react.vercel.app/img/home-1/brand/04.png" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/brand/01.png" alt=""> -->
+                </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="number-section">
+            <div class="number-wrapper">
+                <div class="number">
+                    <img src="https://kindi-react.vercel.app/img/home-1/feature/01.jpg" alt="">
+                </div>
+                <div class="number-content">
+                    <h4>Numbers</h4>
+                    <h1>We always help the needy people</h1>
+                    <p>Charity helps to reduce suffering but also fosters a sense of unity and shared responsibility in differences in someone's life.</p>
+                    <div class="number-counter">
+                    <div class="counter-head">
+                        <h2 class="head-yellow">35k</h2>
+                        <h3 class="head-yellow">Team Suppor</h3>
+                    </div>
+                     <di class="counter-head">
+                        <h2>1k+</h2>
+                        <h3>Successful Camaigns</h3>
+                    </di>
+                     <div class="counter-head">
+                        <h2>15k+</h2>
+                        <h3>Incredible Volunteers</h3>
+                    </div>
+                     <div class="counter-head">
+                        <h2 class="head-yellow">400+</h2>
+                        <h3 class="head-yellow">Monthly Donor</h3>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="faq-section">
+            <div class="faq-wrapper">
+                <div class="our-faq-section">
+                    <div class="our-faq-content">
+                        <h4>Our Faq</h4>
+                    <h1>Explore our FAQs for quick and helpful guidance</h1>
+                                        <p>Charity helps to reduce suffering but also fosters a sense of unity and shared responsibility in differences in someone's life. Charity helps to reduce suffering but also fosters a sense of unity and shared.</p>
+                                        <iframe width="600" height="340" src="https://www.youtube.com/embed/fFHyqhmnVfs" title="How to connect frontend and backend in javascript | Fullstack Proxy and CORS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+                                        
+                    </div>
+                    
+                </div>
+                <div class="faq">
+                    <div class="faq-head">
+                    <h2>What Is Charity, And Why Is It Important ?</h2>
+                    </div>
+                    <div class="faq-head">
+                    <h2>How Can I Get Involved In Charity Work ?</h2>
+                    </div>
+                    <div class="faq-head">
+                    <h2>Dedication for charitable Donations ?</h2>
+                    </div>
+                    <div class="faq-head">
+                    <h2>My Donations Are Going To a Charity ?</h2>
+                    </div>
+
+                    <div class="faq-head">
+                    <h2>Is my donation actually being put to use?</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="blog-section">
+            <div class="blog-wrapper">
+                <div class="blog-head">
+                    <h4>bLOG & nEWS</h4>
+                    <h1>Insights from latest blog</h1>
+                </div>
+                <div class="blogs">
+                    <img src="https://kindi-react.vercel.app/img/home-1/news/01.jpg" alt="">
+                    <div class="icon">
+                        <div class="icons">
+                        <svg fill="none" stroke="#667471" width="16px" height="16px" viewBox="0 0 32 32" id="user" xmlns="http://www.w3.org/2000/svg"><title/><path d="M22.56,16.53a9.95,9.95,0,0,1-13.12,0A15,15,0,0,0,1,30a1,1,0,0,0,1,1H30a1,1,0,0,0,1-1A15,15,0,0,0,22.56,16.53Z"/><circle cx="16" cy="9" r="8"/></svg>
+                        <h5>By : Admin</h5>
+                        </div>
+
+                        <div class="icons">
+                       <svg fill="none" width="20px" stroke="#667471" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.2881437,19.1950792 C8.38869181,19.1783212 8.49195996,19.1926955 8.58410926,19.2362761 C9.64260561,19.7368747 10.8021412,20 12,20 C16.418278,20 20,16.418278 20,12 C20,7.581722 16.418278,4 12,4 C7.581722,4 4,7.581722 4,12 C4,13.7069096 4.53528582,15.3318588 5.51454846,16.6849571 C5.62010923,16.830816 5.63909672,17.022166 5.5642591,17.1859256 L4.34581002,19.8521348 L8.2881437,19.1950792 Z M3.58219949,20.993197 C3.18698783,21.0590656 2.87870208,20.6565881 3.04523765,20.2921751 L4.53592782,17.0302482 C3.54143337,15.5576047 3,13.818993 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 C10.707529,21 9.4528641,20.727055 8.30053434,20.2068078 L3.58219949,20.993197 Z"/>
+</svg>
+                        <h5>Comment</h5>
+                        </div>
+                    </div>
+                    <div class="blogs-con">
+                        <h1>How Education Can Transform a Child’s Future.</h1>
+                        <div class="blog-divider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="">
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {
+  getFirestore
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDsToKfCgI598PviYH5uFbTRSVs2q4Iitw",
+  authDomain: "kindio-ba430.firebaseapp.com",
+  projectId: "kindio-ba430",
+  storageBucket: "kindio-ba430.firebasestorage.app",
+  messagingSenderId: "930492246059",
+  appId: "1:930492246059:web:84f2736acf83bbdddbe26e",
+  measurementId: "G-YZF8TSX978"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+console.log("Firebase Connected !");
+    </script>
+
+   
+</body>
+</html>
