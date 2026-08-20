@@ -8,7 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Kindio</title>
     <style>
-        *{
+     html {
+    scrollbar-color: #FFC107 #f5f5f5;
+    scrollbar-width: auto;
+    
+}
+      
+*{
             padding: 0;
             margin: 0;
             /* outline: 1px solid red; */
@@ -16,8 +22,8 @@
         }
         .top-bar-section{
             background-color: #f8f3e7;
-            padding-bottom: 20px;
-            padding-top: 20px;
+            /* padding-bottom: 20px;
+            padding-top: 20px; */
             /* width: 100%;
             max-width: 100%; */
         }
@@ -27,11 +33,12 @@
     margin: 0 auto;
     justify-content: space-between;
     max-width: 1400px;
+    align-items: center;
 }
-.top-bar{
+/* .top-bar{
     display: flex;
     gap: 20px;
-}
+} */
 .top-bar h3{
     font-size: 22px;
     font-weight: 600;
@@ -50,9 +57,13 @@
             margin: 0;
             padding-top: 20px;
             padding-bottom: 20px;
-            
+            top: 0;
+            position: sticky;
+            z-index: 100;
         }
-
+       header.scrolled{
+        background-color: red;
+       }
         nav{
             display: flex;
             justify-content: space-between;
@@ -71,7 +82,10 @@
             font-weight: 600;
              font-family: "Nunito", sans-serif;
              color: black;
-            
+            transition: 0.5s ease;
+        }
+        nav ul li a:hover{
+            color: #667471;
         }
         nav li{
             list-style-type: none;
@@ -81,23 +95,64 @@
             gap: 20px;
             align-items: center;
         }
+        
         .nav-btn .donate{
             background-color: #0b4e3d;
             border-radius: 50px;
             color: white;
             border: none;
-            padding: 14px 30px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 25px;
+            padding-right: 15px;
             font-size: 16px;
             font-weight: 400;
-             font-family: "Nunito", sans-serif;
-    cursor: pointer;
+            font-family: "Nunito", sans-serif;
+            cursor: pointer;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid #122f2a;
+            transition: 0.5s ease;
 
+        }
+        .nav-btn .donate:hover{
+            color: #122f2a;
+        }
+        .nav-btn .donate::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #FFC107;
+            z-index: -1;
+            width: 0;
+            transition: width 0.9s ease;
+        }
+        .nav-btn .donate:hover::before{
+            width: 100%;
         }
         
         .nav-btn svg{
-            border: 1px solid #0b4e3d;
+            border: 1px solid none !important;
             border-radius: 50px;
             padding: 8px;
+        }
+        .donate svg{
+            fill: white;
+            transform: rotate(-45deg);
+            transition: 0.5s ease;
+        }
+        .nav-btn .donate:hover svg{
+            transform: rotate(1deg);
+        }
+        .nav-btn .donate:hover svg{
+            fill: #0b4e3d;
         }
         .about-wrapper{
             display: flex;
@@ -220,8 +275,36 @@
             font-size: 16px;
             font-family: "Nunito", sans-serif;
             font-weight: 400;
-    cursor: pointer;
+            cursor: pointer;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s ease;
+            z-index: 1;
+            border: 1px solid #122f2a;
+        }
+        .about-btn button::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            z-index: -1;
+            transition: 0.5s ease;
+            background-color: #FFC107;
 
+        }
+        
+        .about-btn button:hover::before{
+            width: 100%;
+        }
+        .about-btn button svg{
+            fill: white;
+            transform: rotate(-45deg);
         }
         /* .about-btn-img{
             display: flex;
@@ -338,6 +421,31 @@
     padding: 12px 25px;
     cursor: pointer;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s ease;
+    border: 1px solid #122f2a;
+}
+.slider button::before{
+    position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            z-index: -1;
+            transition: 0.5s ease;
+            background-color: #FFC107;
+
+}
+.slider button:hover::before{
+    width: 100%;
 }
 .service-image{
     position: absolute;
@@ -388,24 +496,48 @@
     color: white;
     border: none;
     border-radius: 50px; /* 100px ki jagah */
-     /* padding: 10px 20px; */
+     padding: 10px 25px;
     cursor: pointer;
     font-size: 16px;
-    width: 150px;
+    width: 160px;
     height: 50px;
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid #122f2a;
+}
+.donating-btn::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #FFC107;
+    transition: 0.5s ease;
+    z-index: -1;
+    width: 0;
+}
+.donating-btn:hover::before{
+    width: 100%;
+}
+.donating-btn svg{
+    fill: white;
+            transform: rotate(-45deg);
 }
 .images-wrapper{
     width: 100%;
-            max-width: 1300px;
-            margin: 0 auto;
-            display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
     flex-wrap: wrap;
 }
 .images-box{
     border: 2px solid rgb(235, 235, 235);
-    padding: 30px;
-    width: 44.3%;
+    padding: 20px;
+    width: 45%;
     border-radius: 20px;
 }
 .images-box img{
@@ -415,7 +547,7 @@
     display: flex;
 }
 .images-content{
-    padding-left: 30px;
+    padding-left: 20px;
 }
 .images-wrapper{
     display: flex;
@@ -500,9 +632,38 @@ span{
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s ease;
+    overflow: hidden;
     /* width: 150px;
     height: 50px; */
 
+}
+.images-btn::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #FFC107;
+    z-index: -1;
+    transition: 0.5s ease;
+    width: 0;
+}
+.images-btn:hover::before{
+    width: 100%;
+}
+.images-btn svg{
+fill: white;
+            transform: rotate(-45deg);
+}
+.imagtes-btn svg{
+    fill: white;
+            transform: rotate(-45deg);
 }
 
 .images-btn-yellow {
@@ -514,9 +675,34 @@ span{
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
+     display: flex;
+    align-items: center;
+    gap: 10px;
+     position: relative;
+    z-index: 1;
+    transition: 0.5s ease;
+    overflow: hidden;
     /* width: 150px;
     height: 50px; */
 
+}
+.images-btn-yellow::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #122f2a;
+    z-index: -1;
+    transition: 0.5s ease;
+    width: 0;
+}
+.images-btn-yellow:hover::before{
+    width: 100%;
+}
+.images-btn-yellow svg{
+    fill: white;
+            transform: rotate(-45deg);
 }
 .images-btn-orange {
     background-color: #FF5528;
@@ -527,9 +713,32 @@ span{
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
+     display: flex;
+    gap: 10px;
+    align-items: center;
     /* width: 150px;
     height: 50px; */
-
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.images-btn-orange::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #122f2a;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.images-btn-orange:hover::before{
+    width: 100%;
+}
+.images-btn-orange svg{
+    fill: white;
+            transform: rotate(-45deg);
 }
 .images-btn-purple {
     background-color: #8139E7;
@@ -540,9 +749,33 @@ span{
     cursor: pointer;
     margin-top: 30px;
     font-size: 16px;
+     display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     /* width: 150px;
     height: 50px; */
 
+}
+.images-btn-purple::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #122f2a;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.images-btn-purple:hover::before{
+    width: 100%;
+}
+.images-btn-purple svg{
+    fill: white;
+            transform: rotate(-45deg);
 }
 /* .image-content-box-bg-img{
     background-image: url('https://kindi-react.vercel.app/img/home-1/donation/shape.png');
@@ -845,13 +1078,7 @@ span{
 .tesimonials-content span{
     color: black;
 }
-.logos-slider{
-    /* position: relative; */
-    animation: infiniteScroll 10s linear infinite;
-    display: flex;
-    gap: 30px;
 
-}
 .number-content h4{
      border-radius: 50px;
      border: 1px solid #0b4e3d;
@@ -877,8 +1104,9 @@ span{
     padding-bottom: 20px;
 }
 .logos-slider img{
-    width: 120px;
+    width: 100px;
     height: 40px;
+    object-fit: cover;
 }
 
 .number-content p{
@@ -889,20 +1117,6 @@ span{
     color: #667471;
     line-height: 30px;
 }
-@keyframes infiniteScroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* .testimonials-left-image{
-    position: absolute;
-    z-index: 1;
-    bottom: 30px;
-} */
 
 .number-counter{
     display: grid;
@@ -1166,7 +1380,41 @@ span{
     font-size: 16px;
     text-decoration: none;
      font-family: "Nunito", sans-serif;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid #FFC107;
+    transition: 0.5s ease;
 
+}
+.kindio-content-btns a:hover{
+    color: #FFC107;
+}
+.kindio-content-btns a:hover svg{
+    fill: #FFC107;
+            transform: rotate(-45deg);
+}
+.kindio-content-btns a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #122f2a;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.kindio-content-btns a:hover::before{
+    width: 100%;
+}
+.kindio-content-btns a svg{
+    fill: #122f2a;
+            transform: rotate(-45deg);
 }
 .kindio-content-btns h4{
     color: white;
@@ -1279,6 +1527,7 @@ transform: translateX(6px);
     background-color: #FFC107;
     fill: #122f2a;
 }
+
 .footer-divider{
     border: 1px solid white;
 }
@@ -1319,13 +1568,187 @@ text-decoration: none;
     gap: 20px;
     list-style-type: none;
 }
-/* .input{
+.header-social-links{
     display: flex;
-    gap: 0;
-} */
+    gap: 20px;
+    /* padding-top: 30px; */
+}
+.header-social-links svg{
+    border: 1px solid #FFC107;
+    padding: 10px;
+    border-radius: 100px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.header-social-links svg:hover{
+    background-color: #FFC107;
+    fill: #122f2a;
+}
+.top-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.top-bar svg{
+    border: 1px solid #122f2a;
+    padding: 10px;
+    border-radius: 100px;
+}
+.top-bar-divider{
+    border: 1px solid rgb(217, 217, 217);
+    height: 80px;
+    margin-left: 80px;
+}
+.slider button svg{
+    fill: white;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            gap: 20px;    
+}
+
+.home{
+    background-image: url('https://kindi-react.vercel.app/img/home-1/hero/hero-bg.jpg');
+    width: 100%;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.home::before{
+    background: rgba(0, 0, 0, 0.80);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 1;
+}
+.home > *{
+    position: relative;
+    z-index: 2;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.home h4{
+    color: #FFC107;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: "DM Serif Text", serif;
+    letter-spacing: 4px;
+}
+.home h1{
+    color: white;
+    font-size: 75px;
+    font-weight: 800;
+    font-family: "DM Serif Text", serif;
+    /* letter-spacing: 4px; */
+    width: 100%;
+    max-width: 35ch;
+}
+
+.home p{
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
+    max-width: 800px;
+    line-height: 30px;
+}
+.home-btns{
+    display: flex;
+    gap: 30px;
+}
+.left-btn{
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+    /* border: 1px solid white; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 50px;
+    background-color: #0b4e3d;
+   position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    /* width: 150px;
+    height: 50px; */
+
+}
+.left-btn::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #FFC107;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.left-btn:hover::before{
+    width: 100%;
+}
+
+.right-btn{
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+    border: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.right-btn::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    z-index: -1;
+    background-color: #FFC107;
+    transition: 0.5s ease;
+}
+.right-btn:hover::before{
+    width: 100%;
+}
+.right-btn:hover{
+    color: #122f2a;
+    font-weight: 600;
+}
+
     </style>
 </head>
 <body>
+    
 
     <section>
     <div class="top-bar-section">
@@ -1333,27 +1756,65 @@ text-decoration: none;
             <div class="top-bar">
                 <?xml version="1.0" encoding="utf-8"?>
 <!-- License: PD. Made by mono-company: https://github.com/mono-company/mono-icons -->
-<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
+<svg width="25px" height="25px" viewBox="0 0 24 24" fill="#122f2a" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
                 <div class="top-bar-content">
                     <h4>Our Address</h4>
                 <h3>California City, USA</h3>
                 </div>
+                <div class="top-bar-divider"></div>
             </div>
-
+                
              <div class="top-bar">
-                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
-                <div class="top-bar-content">
-                <h4>Our Address</h4>
-                <h3>California City, USA</h3>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- Made by Christian Veigt -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by element-plus: https://github.com/element-plus/element-plus-icons -->
+<svg width="25px" height="25px" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path fill="#122f2a" d="M79.36 432.256L591.744 944.64a32 32 0 0035.2 6.784l253.44-108.544a32 32 0 009.984-52.032l-153.856-153.92a32 32 0 00-36.928-6.016l-69.888 34.944L358.08 394.24l35.008-69.888a32 32 0 00-5.952-36.928L233.152 133.568a32 32 0 00-52.032 10.048L72.512 397.056a32 32 0 006.784 35.2zm60.48-29.952l81.536-190.08L325.568 316.48l-24.64 49.216-20.608 41.216 32.576 32.64 271.552 271.552 32.64 32.64 41.216-20.672 49.28-24.576 104.192 104.128-190.08 81.472L139.84 402.304zM512 320v-64a256 256 0 01256 256h-64a192 192 0 00-192-192zm0-192V64a448 448 0 01448 448h-64a384 384 0 00-384-384z"/></svg>           <div class="top-bar-content">
+                <h4>Call Us</h4>
+                <h3>+9633654896</h3>
                 </div>
+                <div class="top-bar-divider"></div>
             </div>
 
             <div class="top-bar">
-                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0D0D0D"/></svg>
-                <div class="top-bar-content">
-                <h4>Our Address</h4>
-                <h3>California City, USA</h3>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Kenan Gundogan: https://github.com/kenangundogan/fontisto -->
+<svg fill="#122f2a" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.484 11.976 6.151-5.344v10.627zm-7.926.905 2.16 1.875c.339.288.781.462 1.264.462h.017-.001.014c.484 0 .926-.175 1.269-.465l-.003.002 2.16-1.875 6.566 5.639h-20.009zm-6.572-7.516h20.03l-9.621 8.356c-.104.082-.236.132-.38.132-.005 0-.009 0-.014 0h.001c-.004 0-.009 0-.014 0-.144 0-.277-.05-.381-.133l.001.001zm-.621 1.266 6.15 5.344-6.15 5.28zm21.6-2.441c-.24-.12-.522-.19-.821-.19h-20.285c-.3.001-.584.071-.835.197l.011-.005c-.618.309-1.035.937-1.035 1.663v.004 12.168c.001 1.026.833 1.857 1.858 1.858h20.283c1.026-.001 1.857-.833 1.858-1.858v-12.168c0-.001 0-.002 0-.004 0-.727-.419-1.357-1.029-1.66l-.011-.005z"/></svg>                <div class="top-bar-content">
+                <h4>Email</h4>
+                <h3 style="text-transform: capitalize;">info@example.com</h3>
                 </div>
+                <div class="top-bar-divider"></div>
+
+            </div>
+            <div class="header-social-links">
+
+                <!-- Twitter / X -->
+                <svg fill="#FFC107" width="20px" height="20px"
+                    viewBox="0 0 256 256"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M243.69531,70.46924A3.99949,3.99949,0,0,0,240,68l-32.79834-.00049a44.09747,44.09747,0,0,0-38.64307-23.99609A44.31838,44.31838,0,0,0,124,87.99951l-.00977,11.1709c-44.07861-9.38477-80.78418-45.62207-81.16308-46a4.00074,4.00074,0,0,0-6.7627,2.11426c-8.5205,46.86181,5.47461,78.11865,18.71534,96.08789a103.47267,103.47267,0,0,0,27.40136,25.87207C66.4668,197.58936,38.88574,208.14551,38.5957,208.25488a3.99983,3.99983,0,0,0-1.92382,5.96387c.26464.39746,2.78417,3.98145,9.53906,7.35889C54.73438,225.83936,66.10254,228,80,228c68.94678,0,126.47021-53.45166,131.624-121.96729l31.2041-31.2041A3.99939,3.99939,0,0,0,243.69531,70.46924Zm-38.78613,30.96484a4.00173,4.00173,0,0,0-1.16357,2.57422C199.60205,169.05029,145.24609,220,80,220c-17.8457,0-27.62695-3.88721-32.50391-6.8667,10.374-4.82812,31.45508-16.34863,43.832-34.91455a3.99941,3.99941,0,0,0-1.53906-5.79639c-.15136-.07568-15.293-7.77832-28.56885-25.79541-16.65429-22.602-22.84765-50.36084-18.4497-82.60156,12.792,11.31055,45.86767,37.46973,84.55761,43.91992a4,4,0,0,0,4.65821-3.94189L132,88.00635v-.00391a36.31979,36.31979,0,0,1,36.459-36,36.07711,36.07711,0,0,1,32.54688,21.59863,4.00012,4.00012,0,0,0,3.66553,2.39844L230.34326,76Z"/>
+                </svg>
+
+                <!-- WhatsApp -->
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
+<svg fill="#FFC107" width="20px" height="20px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-whatsapp"><path d='M9.516.012C4.206.262.017 4.652.033 9.929a9.798 9.798 0 0 0 1.085 4.465L.06 19.495a.387.387 0 0 0 .47.453l5.034-1.184a9.981 9.981 0 0 0 4.284 1.032c5.427.083 9.951-4.195 10.12-9.58C20.15 4.441 15.351-.265 9.516.011zm6.007 15.367a7.784 7.784 0 0 1-5.52 2.27 7.77 7.77 0 0 1-3.474-.808l-.701-.347-3.087.726.65-3.131-.346-.672A7.62 7.62 0 0 1 2.197 9.9c0-2.07.812-4.017 2.286-5.48a7.85 7.85 0 0 1 5.52-2.271c2.086 0 4.046.806 5.52 2.27a7.672 7.672 0 0 1 2.287 5.48c0 2.052-.825 4.03-2.287 5.481z'/><path d='M14.842 12.045l-1.931-.55a.723.723 0 0 0-.713.186l-.472.478a.707.707 0 0 1-.765.16c-.913-.367-2.835-2.063-3.326-2.912a.694.694 0 0 1 .056-.774l.412-.53a.71.71 0 0 0 .089-.726L7.38 5.553a.723.723 0 0 0-1.125-.256c-.539.453-1.179 1.14-1.256 1.903-.137 1.343.443 3.036 2.637 5.07 2.535 2.349 4.566 2.66 5.887 2.341.75-.18 1.35-.903 1.727-1.494a.713.713 0 0 0-.408-1.072z'/></svg>
+
+                <!-- Instagram -->
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#FFC107" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"/></svg>
+
+                <!-- YouTube -->
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- License: PD. Made by Aleksey Popov: https://dribbble.com/AlekseyPopov -->
+<svg fill="#FFC107" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M23,11.9972 C23,15.0688707 22.7080514,16.9571365 22.0247481,18.1281724 C21.3347709,19.3777602 20.5269977,19.7708297 18.8782989,19.8862992 C17.7148693,19.9542414 14.794638,20 12.0026667,20 C9.2044172,20 6.28275714,19.9542562 5.10860514,19.8855427 C3.47493151,19.7708031 2.66701263,19.37838 1.97791182,18.142374 C1.29279472,16.9480084 1,15.052042 1,12.0084 C1,8.94737365 1.29138368,7.06090428 1.97193166,5.86259947 C2.67010997,4.61046509 3.49111627,4.21325835 5.11100471,4.1184917 C6.23144506,4.04250638 8.99660854,4 12.0026667,4 C15.002263,4 17.766208,4.04252223 18.8782989,4.11790083 C20.5073007,4.21303163 21.3281267,4.60936303 22.020213,5.8580297 C22.7108012,7.06048454 23,8.93778123 23,11.9972 Z M20.283329,6.84963647 C19.9603324,6.26505017 19.7713697,6.17346202 18.752413,6.11391338 C17.6926261,6.04212137 14.954737,6 12.0026667,6 C9.04424331,6 6.3050775,6.04210674 5.2370951,6.1144916 C4.22844212,6.17352647 4.03674592,6.26627 3.71489655,6.84342165 C3.2475376,7.66638709 3,9.26898917 3,11.9972 C3,14.7270394 3.24886149,16.33852 3.71873501,17.1577995 C4.03565111,17.7261665 4.22600958,17.8186276 5.23703026,17.8897046 C6.34874254,17.9546989 9.24212825,18 12.0026667,18 C14.7569983,18 17.6489264,17.9546849 18.7500936,17.8904464 C19.7737637,17.8187098 19.961409,17.7274 20.2855157,17.1409953 C20.752236,16.3407623 21,14.7382734 21,12.0084 C21,9.25771396 20.7535449,7.66399511 20.283329,6.84963647 Z M10,9 L15,12 L10,15 L10,9 Z"/>
+</svg>
+
             </div>
         </div>
     </div>
@@ -1363,7 +1824,7 @@ text-decoration: none;
     <header>
         <nav>
             <div class="nav-img">
-                <img src="/black-logo.png" alt="">
+                <img src="https://kindi-react.vercel.app/img/logo/black-logo.png" alt="">
             </div>
             <ul>
                 <li><a href="">Home</a></li>
@@ -1377,10 +1838,34 @@ text-decoration: none;
                 <?xml version="1.0" encoding="utf-8"?>
 <!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
 <svg fill="#000000" width="22px" height="22px" viewBox="-2.5 -2.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-search"><path d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z'/></svg>
-                <button class="donate">Donate Now</button>
+                <button class="donate">Donate Now  <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#000000" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
             </div>
         </nav>
     </header>
+
+    <section>
+
+        <div class="home-section">
+            <div class="home-wrapper">
+                <div class="home">
+                    <h4>START DONATING TO POOR PEOPLE</h4>
+                    <h1>We Are Non-Profit Charity Organization</h1>
+                    <p>Charity Not Only Helps To Reduce Suffering But Also Fosters A Sense Of Unity And Shared Responsibility In Difference In Someone's Life.</p>
+                    <div class="home-btns">
+                        <a class="left-btn" href="">Join With Us</a>
+                        <a class="right-btn" href="">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 
     <section>
         <div class="about-section">
@@ -1391,14 +1876,14 @@ text-decoration: none;
                     <p>“Overall, I cannot recommend The Gourmet Bistro highly enough. If you're looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further. I will definitely be returning .</p>
                    <div class="about-box">
                     <div class="icon-box">
-                    <img src="/01.svg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/icon/01.svg" alt="">
                     <div class="icon-box-content">
                         <h3>Fundraising</h3>
                         <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further.</p>
                         </div>
                     </div>
                     <div class="icon-box">
-                    <img src="/02.svg" alt="">
+                    <img src="https://kindi-react.vercel.app/img/home-1/icon/02.svg" alt="">
                     <div class="icon-box-content">
                         <h3>Donation Marketing</h3>
                         <p>Looking for a restaurant that serves delicious, beautifully presented dishes with impeccable service, look no further.</p>
@@ -1406,7 +1891,12 @@ text-decoration: none;
                     </div>
                     <div class="about-btn-img">
                     <div class="about-btn">
-                        <button>More About Us</button>
+                        <button>More About Us<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#000000" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                      <!-- <div class="about-image-box">
                         <img src="/client.png" alt="">
@@ -1418,8 +1908,10 @@ text-decoration: none;
                 </div>
                 <div class="about-images">
                     <!-- <img class="about-one-image" src="/about-1.jpg" alt=""> -->
-                    <img class="about-three-image" src="/about-3.jpg" alt="">
-                    <img class="about-two-image" src="/about-2.png" alt="">
+                     
+                    <img class="about-three-image" src="https://kindi-react.vercel.app/img/home-1/about/about-3.jpg" alt="">
+                    <img class="about-two-image" src="https://kindi-react.vercel.app/img/home-1/about/about-2.png" alt="">
+                     
                     
                     
                 </div>
@@ -1442,21 +1934,36 @@ text-decoration: none;
         <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
         <h1>Medical Help</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <button>Learn More</button>
+        <button>Learn More <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#000000" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
     </div>
 
     <div class="slider">
         <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
         <h1>Food Support</h1>
                <p>Lorem ipsum dolor s it amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <button>Learn More</button>
+        <button>Learn More <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#000000" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
     </div>
 
     <div class="slider">
         <img src="https://kindi-react.vercel.app/img/home-1/icon/05.svg" alt="">
         <h1>Education</h1>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <button>Learn More</button>
+        <button>Learn More <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#000000" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
     </div>
 </div>
             </div>
@@ -1472,7 +1979,12 @@ text-decoration: none;
                     <h4>Lets Start Donating</h4>
                     <div class="donating-content">
                     <h1>See Your Impact Transparent Donation Causes</h1>
-                    <button class="donating-btn">Learn More</button>
+                    <button class="donating-btn">Learn More <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="white" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                 </div>
             </div>
@@ -1492,7 +2004,12 @@ text-decoration: none;
                         <h4>Goal: <span>$250,000</span></h4>
                         <h4>Raised: <span>$500,000</span></h4>
                     </div>
-                    <button class="images-btn">Donte Now</button>
+                    <button class="images-btn">Donte Now <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="white" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                     </div>
                 </div>
@@ -1510,7 +2027,12 @@ text-decoration: none;
                         <h4>Goal: <span>$250,000</span></h4>
                         <h4>Raised: <span>$500,000</span></h4>
                     </div>
-                    <button class="images-btn-yellow">Donte Now</button>
+                    <button class="images-btn-yellow">Donte Now <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="white" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                     </div>
                 </div>
@@ -1528,7 +2050,12 @@ text-decoration: none;
                         <h4>Goal: <span>$250,000</span></h4>
                         <h4>Raised: <span>$500,000</span></h4>
                     </div>
-                    <button class="images-btn-orange">Donte Now</button>
+                    <button class="images-btn-orange">Donte Now <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="white" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                     </div>
                 </div>
@@ -1546,7 +2073,12 @@ text-decoration: none;
                         <h4>Goal: <span>$250,000</span></h4>
                         <h4>Raised: <span>$500,000</span></h4>
                     </div>
-                    <button class="images-btn-purple">Donte Now</button>
+                    <button class="images-btn-purple">Donte Now <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="white" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></button>
                     </div>
                     </div>
                 </div>
@@ -1561,6 +2093,7 @@ text-decoration: none;
                     <h4>Complete Project</h4>
                     <h1>Our Recent completed Project img</h1>
                 </div>
+                
             <div class="images-slider-wrapper">
                 <div class="images-slider">
                     <img src="https://kindi-react.vercel.app/img/home-1/project/03.jpg" alt="">
@@ -1583,7 +2116,7 @@ text-decoration: none;
 
                 </div>
             </div>
-
+            
             
         </div>
         
@@ -1734,17 +2267,7 @@ text-decoration: none;
                         <h5>Regular Customer's</h5>
                         <div class="divider"></div>
                         <p>Total raising money in this year > <span>$4,50,000</span></p>
-                         <div class="logos-slider">
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/02.png" alt="">
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/03.png" alt="">
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/04.png" alt="">
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/01.png" alt="">
-
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/02.png" alt="">
-                    <!-- <img src="https://kindi-react.vercel.app/img/home-1/brand/03.png" alt=""> -->
-                    <!-- <img src="https://kindi-react.vercel.app/img/home-1/brand/04.png" alt="">
-                    <img src="https://kindi-react.vercel.app/img/home-1/brand/01.png" alt=""> -->
-                </div>
+                       
                     </div>
                     
                 </div>
@@ -1924,7 +2447,12 @@ text-decoration: none;
                     <h1>Always open to more people who what to support each other</h1>
                     <p>Charity not only helps to reduce suffering but also fosters a sense of unity and shared responsibility in society. It reminds us of the can make it.</p>
                     <div class="kindio-content-btns">
-                    <a href="#">Explore More</a>
+                    <a href="#">Explore More <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- License: PD. Made by MapBox: https://github.com/mapbox/maki -->
+<svg fill="#122f2a" width="15px" height="15px" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" id="arrow">
+  <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+</svg></a>
                     <h4>Call: +92 555 666 444</h4>
                 </div>
                 </div>
@@ -2155,7 +2683,5 @@ const analytics = getAnalytics(app);
 
 console.log("Firebase Connected !");
     </script>
-
-   
 </body>
 </html>
